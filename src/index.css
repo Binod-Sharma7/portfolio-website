@@ -13,3 +13,50 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  /* Ensure touch targets are at least 44px */
+  button, a, input, textarea {
+    min-height: 44px;
+  }
+
+  /* Better mobile scrolling */
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Improve text rendering on mobile */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Better tap highlights */
+  a, button {
+    -webkit-tap-highlight-color: rgba(56, 189, 248, 0.1);
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 640px) {
+  /* Reduce motion for better performance on mobile */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Enable motion for users who prefer it */
+  @media (prefers-reduced-motion: no-preference) {
+    *, *::before, *::after {
+      animation-duration: initial !important;
+      animation-iteration-count: initial !important;
+      transition-duration: initial !important;
+    }
+  }
+}
