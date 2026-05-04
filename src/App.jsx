@@ -256,7 +256,7 @@ const App = () => {
                 <motion.a
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  href="public\photos\cv\Binod_Sharma_CV.pdf"
+                  href="/photos/cv/Binod_Sharma_CV.pdf"
                   download
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-8 py-3 text-sm font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300 duration-300"
                 >
@@ -293,7 +293,7 @@ const App = () => {
               <motion.img
                 whileHover={{ scale: 1.05, rotate: [0, -3, 3, 0] }}
                 transition={{ type: 'spring', stiffness: 260 }}
-                src="public\photos\pp\20260315_213247.jpg.jpeg"
+                src="/photos/pp/20260315_213247.jpg.jpeg"
                 alt="Binod Sharma"
                 className="relative h-72 w-72 rounded-full object-cover border-4 border-slate-800 shadow-2xl shadow-cyan-500/25"
               />
@@ -454,7 +454,7 @@ const App = () => {
               {
                 title: 'Employment Management System',
                 description: 'A polished React app for managing employee data with a sleek UI and smooth interactions.',
-                image: '../public/photos/projects/ems3.png',
+                image: '/photos/projects/ems3.png',
                 stack: ['React', 'Tailwind', 'Vite'],
                 github: 'https://github.com/Binod-Sharma7/Employment-management-system-reactJS',
                 live: '#projects',
@@ -462,7 +462,7 @@ const App = () => {
               {
                 title: 'Task-Manager',
                 description: 'Admin dashboard for task management with React, Node.js, and MongoDB, featuring a clean UI and efficient CRUD operations.',
-                image: '../public/photos/projects/task.jpeg',
+                image: '/photos/projects/task.jpeg',
                 stack: ['React', 'Node.js', 'MongoDB'],
                 github: 'https://github.com/Binod-Sharma7/backend1-taskmanager',
                 live: '#projects',
