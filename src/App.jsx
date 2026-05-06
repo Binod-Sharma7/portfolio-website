@@ -112,7 +112,7 @@ const App = () => {
             <div className="flex items-center gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-slate-400">Portfolio</p>
-                <h1 className="text-xl sm:text-2xl md:text-3xl font-black leading-none bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+                <h1 className="text-lg sm:text-2xl md:text-3xl font-black leading-none bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
                   Binod Sharma
                 </h1>
               </div>
@@ -602,7 +602,7 @@ const App = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="container mx-auto px-4 max-w-5xl"
+          className="container mx-auto px-4 max-w-6xl"
         >
           <div className="mb-8 sm:mb-12 text-center">
             <p className="text-sm uppercase tracking-[0.4em] text-pink-300/80 mb-3">Let's connect</p>
@@ -615,7 +615,7 @@ const App = () => {
               Contact Me
             </motion.h2>
           </div>
-          <div className="grid gap-6 sm:gap-10 lg:grid-cols-[0.95fr_0.9fr]">
+          <div className="grid gap-6 sm:gap-10 lg:grid-cols-2">
             <div className="space-y-4 sm:space-y-6 rounded-2xl sm:rounded-3xl border border-slate-700/70 bg-slate-950/70 p-6 sm:p-8 shadow-lg">
               <p className="text-base sm:text-lg text-slate-300">Reach out via email or connect on social.</p>
               <div className="space-y-3 sm:space-y-4">
