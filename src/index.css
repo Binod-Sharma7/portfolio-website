@@ -1,9 +1,19 @@
 @import "tailwindcss";
+
+/* Glassmorphism utility used across the app */
+.glass{
+  background: rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(51, 65, 85, 0.9);
+}
+
 html {
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
+
 
 body {
   min-height: 100vh;
