@@ -107,40 +107,40 @@ const App = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+// emailjs integration
+const handleFormSubmit = async (e) => {
+  e.preventDefault();
 
-  // ================= EMAIL =================
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
 
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+  try {
+    await emailjs.send(
+      'service_x4dpdti',
+      'template_pf40izc',
+      {
+        name: formData.name,        // ✅ FIX: अब template {{name}} match हुन्छ
+        email: formData.email,
+        message: formData.message,
+        time: new Date().toLocaleString(), // (optional but useful)
+      },
+      'EUfd2WKFqyZwehm50'
+    );
 
-    try {
-      await emailjs.send(
-        'service_x4dpdti',
-        'template_pf40izc',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        'EUfd2WKFqyZwehm50'
-      );
+    setSubmitStatus('success');
 
-      setSubmitStatus('success');
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
 
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
+  } catch (error) {
+    setSubmitStatus('error');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   const navLinks = [
     { id: 'intro', label: 'Home' },
     { id: 'about', label: 'About' },
