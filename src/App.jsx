@@ -26,6 +26,7 @@ import {
   Sparkles,
   Rocket,
   Layers3,
+  MoreHorizontal,
 } from 'lucide-react';
 
 import emailjs from '@emailjs/browser';
@@ -718,7 +719,8 @@ const App = () => {
                   'Tailwind',
                   'Embedded C++',
                 ],
-                demo: 'https://www.linkedin.com/posts/binod-sharma-7869463a3_driverdrowsinessdetection-embeddedsystems-ugcPost-7460712338065641473-mbbZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGLqzNYB0G43Xq8l22pt0pZsGdOXLu7XBeY',
+                webdemo: 'https://driver-drowsy-detection-project.vercel.app/',
+                more: 'https://www.linkedin.com/posts/binod-sharma-7869463a3_driverdrowsinessdetection-embeddedsystems-ugcPost-7460712338065641473-mbbZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGLqzNYB0G43Xq8l22pt0pZsGdOXLu7XBeY',
               },
               {
                 title: 'Employment Management System',
@@ -794,12 +796,24 @@ const App = () => {
                       <GitBranch className="w-4 h-4" />
                       Code
                     </motion.a>
+                      
+                      <motion.a
+                      whileHover={{
+                        scale: 1.03,
+                      }}
+                      href={project.more}
+                      target="_blank"
+                      className="flex-1 py-3 rounded-2xl border border-white/10 flex items-center justify-center gap-2 text-sm"
+                    >
+                      <MoreHorizontal className="w-4 h-4" />
+                      More
+                    </motion.a>
 
                     <motion.a
                       whileHover={{
                         scale: 1.03,
                       }}
-                      href={project.demo}
+                      href={project.webdemo}
 
                       className="flex-1 py-3 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-semibold flex items-center justify-center gap-2 text-sm"
                     >
