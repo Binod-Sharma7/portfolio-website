@@ -7,6 +7,9 @@ import {
 } from 'framer-motion';
 
 import {
+  Cpu,
+  Wifi,
+  Activity,
   Github,
   Instagram,
   Facebook,
@@ -30,10 +33,12 @@ import emailjs from '@emailjs/browser';
 const App = () => {
   const phrases = useMemo(
     () => [
-      'I build sharp digital experiences',
-      'React Developer',
+      'Embedded Systems Developer',
+      'ESP32 & IoT Enthusiast',
+      'Full Stack & React Developer',
+      'Building Smart Realtime Systems',
       'Electronics Engineer',
-      'Creative Frontend Designer',
+      'Hardware + Software Integration',
     ],
     []
   );
@@ -425,9 +430,12 @@ const App = () => {
               <span className="inline-block w-1 h-7 bg-cyan-400 ml-1 animate-pulse" />
             </div>
 
-            <p className="mt-5 text-slate-400 text-base leading-relaxed max-w-lg">
-              Electronics Engineer turned Frontend Developer crafting modern
-              digital experiences with React and premium UI animations.
+            <p className="mt-5 text-slate-400 text-base leading-relaxed max-w-xl">
+              Electronics and Communication Engineering student passionate about
+              Embedded Systems, IoT, and Full Stack Development.
+
+              Experienced in building realtime smart systems using ESP32,
+              Arduino, Sensors, Firebase, React, and modern web technologies.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -496,8 +504,9 @@ const App = () => {
                 transition={{ repeat: Infinity, duration: 4 }}
                 className="absolute -right-5 bottom-12 w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-400/20 flex items-center justify-center backdrop-blur-xl"
               >
-                <Rocket className="w-5 h-5 text-violet-300" />
+                <Cpu className="w-5 h-5 text-violet-300" />
               </motion.div>
+              
 
               <img
                 src="/photos/pp/20260315_213247.jpg.jpeg"
@@ -524,17 +533,20 @@ const App = () => {
 
             <div className="lg:col-span-7 space-y-5 text-slate-300 leading-relaxed">
               <p>
-                Passionate React Developer focused on creating modern and
-                visually engaging digital experiences.
+                Passionate Electronics and Communication Engineering student with
+                hands-on experience in Embedded Systems, IoT, and Full Stack Development.
               </p>
 
               <p>
-                Skilled in React, Tailwind CSS, Framer Motion, and MERN Stack
-                technologies.
+                Skilled in building realtime monitoring systems using ESP32,
+                Arduino, IR Sensors, Eye Blink Sensors, Firebase Realtime Database,
+                and React dashboards.
               </p>
 
               <p>
-                I enjoy building clean, responsive, and eye-catching interfaces.
+                Experienced in hardware-software integration, sensor interfacing,
+                realtime data visualization, and responsive UI development using
+                modern web technologies.
               </p>
             </div>
 
@@ -553,12 +565,12 @@ const App = () => {
                 },
                 {
                   title: 'Role',
-                  info: 'Full Stack Dev',
+                  info: 'Embedded & Full Stack Dev',
                   icon: Briefcase,
                 },
                 {
                   title: 'Focus',
-                  info: 'UI/UX Design',
+                  info: 'IoT & Smart Systems',
                   icon: Sparkles,
                 },
               ].map((item, i) => {
@@ -617,12 +629,28 @@ const App = () => {
               {
                 title: 'Backend',
                 icon: Briefcase,
-                skills: ['Node.js', 'Express', 'MongoDB', 'REST APIs'],
+                skills: [
+                  'Node.js',
+                  'Express',
+                  'MongoDB',
+                  'Firebase',
+                  'REST APIs',
+                  'Realtime Database',
+                ],
               },
               {
-                title: 'Other',
+                title: 'Embedded & IoT',
                 icon: Award,
-                skills: ['Git', 'Arduino', 'Electronics', 'Figma'],
+                skills: [
+                  'ESP32',
+                  'Arduino',
+                  'IR Sensors',
+                  'Eye Blink Sensors',
+                  'Embedded C/C++',
+                  'Firebase',
+                  'Hardware Integration',
+                  'Realtime Monitoring',
+                ],
               },
             ].map((group, i) => {
               const Icon = group.icon;
@@ -673,9 +701,25 @@ const App = () => {
             Projects
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8">
 
             {[
+              {
+                title: 'Driver Drowsiness Detection System',
+                desc: 'Smart Driver Drowsiness Detection and Monitoring System developed using ESP32, Eye Blink Sensors, IR Sensors, Firebase Realtime Database, and a React-based monitoring dashboard with realtime alerts and hazard detection.',
+                img: '/photos/projects/drowsiness.jpeg',
+                github:
+                  'https://github.com/Binod-Sharma7/driver_drowsy_detection_project',
+                tech: [
+                  'ESP32',
+                  'React',
+                  'Firebase',
+                  'Arduino',
+                  'Tailwind',
+                  'Embedded C++',
+                ],
+                demo: 'https://www.linkedin.com/posts/binod-sharma-7869463a3_driverdrowsinessdetection-embeddedsystems-ugcPost-7460712338065641473-mbbZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGLqzNYB0G43Xq8l22pt0pZsGdOXLu7XBeY',
+              },
               {
                 title: 'Employment Management System',
                 desc: 'Modern React employee management platform.',
@@ -692,6 +736,7 @@ const App = () => {
                   'https://github.com/Binod-Sharma7/backend1-taskmanager',
                 tech: ['MERN', 'MongoDB'],
               },
+
             ].map((project, i) => (
               <motion.div
                 key={i}
@@ -754,7 +799,8 @@ const App = () => {
                       whileHover={{
                         scale: 1.03,
                       }}
-                      href="#"
+                      href={project.demo}
+
                       className="flex-1 py-3 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-semibold flex items-center justify-center gap-2 text-sm"
                     >
                       Live Demo
@@ -798,8 +844,13 @@ const App = () => {
             </motion.div>
 
             <h3 className="text-3xl font-bold">
-              More Coming Soon...
+              Driver Drowsiness Detection System Completed
             </h3>
+
+            <p className="text-slate-400 mt-4">
+              Successfully developed a realtime embedded monitoring system using
+              ESP32, Sensors, Firebase, and React dashboard integration.
+            </p>
 
             <p className="text-slate-400 mt-4">
               Building impactful projects and continuously learning.
@@ -808,7 +859,7 @@ const App = () => {
         </div>
       </section>
 
-      
+
       {/* CONTACT */}
       <section id="contact" className="py-24">
         <div className="max-w-4xl mx-auto px-5">
@@ -949,7 +1000,7 @@ const App = () => {
           </form>
         </div>
       </section>
-     
+
 
 
       {/* FOOTER */}
