@@ -7,6 +7,10 @@ import {
 } from 'framer-motion';
 
 import {
+  Github,
+  Instagram,
+  Facebook,
+  Linkedin,
   Award,
   Briefcase,
   Code,
@@ -107,40 +111,40 @@ const App = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-// emailjs integration
-const handleFormSubmit = async (e) => {
-  e.preventDefault();
+  // emailjs integration
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
 
-  setIsSubmitting(true);
-  setSubmitStatus(null);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-  try {
-    await emailjs.send(
-      'service_x4dpdti',
-      'template_pf40izc',
-      {
-        name: formData.name,        // ✅ FIX: अब template {{name}} match हुन्छ
-        email: formData.email,
-        message: formData.message,
-        time: new Date().toLocaleString(), // (optional but useful)
-      },
-      'EUfd2WKFqyZwehm50'
-    );
+    try {
+      await emailjs.send(
+        'service_x4dpdti',
+        'template_pf40izc',
+        {
+          name: formData.name,        // ✅ FIX: अब template {{name}} match हुन्छ
+          email: formData.email,
+          message: formData.message,
+          time: new Date().toLocaleString(), // (optional but useful)
+        },
+        'EUfd2WKFqyZwehm50'
+      );
 
-    setSubmitStatus('success');
+      setSubmitStatus('success');
 
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
 
-  } catch (error) {
-    setSubmitStatus('error');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const navLinks = [
     { id: 'intro', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -175,139 +179,139 @@ const handleFormSubmit = async (e) => {
 
           {/* LOGO */}
           <motion.a
-  href="#intro"
-  initial={{ opacity: 0, x: -30 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8 }}
-  whileHover={{ scale: 1.03 }}
-  className="flex items-center gap-4 cursor-pointer group select-none"
->
-  {/* Animated Logo */}
-  <div className="relative flex items-center justify-center">
-    
-    {/* Glow */}
-    <motion.div
-      animate={{
-        scale: [1, 1.4, 1],
-        opacity: [0.3, 0.9, 0.3],
-      }}
-      transition={{
-        duration: 3,
-        repeat: Infinity,
-      }}
-      className="absolute w-16 h-16 rounded-3xl bg-cyan-400/30 blur-2xl"
-    />
+            href="#intro"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            whileHover={{ scale: 1.03 }}
+            className="flex items-center gap-4 cursor-pointer group select-none"
+          >
+            {/* Animated Logo */}
+            <div className="relative flex items-center justify-center">
 
-    {/* Outer Ring */}
-    <motion.div
-      animate={{ rotate: 360 }}
-      transition={{
-        duration: 10,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-      className="absolute w-16 h-16 rounded-3xl border border-cyan-400/30 border-dashed"
-    />
+              {/* Glow */}
+              <motion.div
+                animate={{
+                  scale: [1, 1.4, 1],
+                  opacity: [0.3, 0.9, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                }}
+                className="absolute w-16 h-16 rounded-3xl bg-cyan-400/30 blur-2xl"
+              />
 
-    {/* Inner Ring */}
-    <motion.div
-      animate={{ rotate: -360 }}
-      transition={{
-        duration: 14,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-      className="absolute w-12 h-12 rounded-2xl border border-violet-400/30"
-    />
+              {/* Outer Ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute w-16 h-16 rounded-3xl border border-cyan-400/30 border-dashed"
+              />
 
-    {/* Main Box */}
-    <motion.div
-      whileHover={{
-        rotate: -10,
-        scale: 1.1,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-      }}
-      className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 flex items-center justify-center shadow-[0_0_40px_rgba(34,211,238,0.45)]"
-    >
-      <motion.span
-        animate={{
-          y: [0, -4, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-        }}
-        className="text-white font-black text-xl"
-      >
-        B
-      </motion.span>
-    </motion.div>
+              {/* Inner Ring */}
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{
+                  duration: 14,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute w-12 h-12 rounded-2xl border border-violet-400/30"
+              />
 
-    {/* Orbit Dot */}
-    <motion.div
-      animate={{ rotate: 360 }}
-      transition={{
-        duration: 6,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-      className="absolute w-20 h-20"
-    >
-      <div className="absolute top-0 left-1/2 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.9)]" />
-    </motion.div>
-  </div>
+              {/* Main Box */}
+              <motion.div
+                whileHover={{
+                  rotate: -10,
+                  scale: 1.1,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                }}
+                className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 flex items-center justify-center shadow-[0_0_40px_rgba(34,211,238,0.45)]"
+              >
+                <motion.span
+                  animate={{
+                    y: [0, -4, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
+                  className="text-white font-black text-xl"
+                >
+                  B
+                </motion.span>
+              </motion.div>
 
-  {/* Text */}
-  <div className="relative">
-    <motion.h1
-      whileHover={{ scale: 1.03 }}
-      className="text-2xl font-black tracking-tight"
-    >
-      <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-500 bg-clip-text text-transparent">
-        Binod Sharma
-      </span>
-    </motion.h1>
+              {/* Orbit Dot */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute w-20 h-20"
+              >
+                <div className="absolute top-0 left-1/2 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.9)]" />
+              </motion.div>
+            </div>
 
-    {/* Animated Underline */}
-    <motion.div
-      initial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      transition={{
-        duration: 1.2,
-        delay: 0.5,
-      }}
-      className="h-[3px] mt-1 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500"
-    />
+            {/* Text */}
+            <div className="relative">
+              <motion.h1
+                whileHover={{ scale: 1.03 }}
+                className="text-2xl font-black tracking-tight"
+              >
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-500 bg-clip-text text-transparent">
+                  Binod Sharma
+                </span>
+              </motion.h1>
 
-    {/* Floating Particles */}
-    <motion.div
-      animate={{
-        x: [0, 8, 0],
-        opacity: [0.3, 1, 0.3],
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-      }}
-      className="absolute -right-5 top-1 w-2 h-2 rounded-full bg-cyan-400"
-    />
+              {/* Animated Underline */}
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.5,
+                }}
+                className="h-[3px] mt-1 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500"
+              />
 
-    <motion.div
-      animate={{
-        y: [0, -8, 0],
-        opacity: [0.2, 1, 0.2],
-      }}
-      transition={{
-        duration: 2.5,
-        repeat: Infinity,
-      }}
-      className="absolute -right-9 top-5 w-2 h-2 rounded-full bg-violet-500"
-    />
-  </div>
-</motion.a>
+              {/* Floating Particles */}
+              <motion.div
+                animate={{
+                  x: [0, 8, 0],
+                  opacity: [0.3, 1, 0.3],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+                className="absolute -right-5 top-1 w-2 h-2 rounded-full bg-cyan-400"
+              />
+
+              <motion.div
+                animate={{
+                  y: [0, -8, 0],
+                  opacity: [0.2, 1, 0.2],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                }}
+                className="absolute -right-9 top-5 w-2 h-2 rounded-full bg-violet-500"
+              />
+            </div>
+          </motion.a>
 
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-2">
@@ -316,8 +320,8 @@ const handleFormSubmit = async (e) => {
                 key={link.id}
                 href={`#${link.id}`}
                 className={`px-5 py-2.5 rounded-full text-sm transition-all ${activeSection === link.id
-                    ? 'bg-cyan-500/10 text-cyan-300'
-                    : 'text-slate-300 hover:bg-white/5'
+                  ? 'bg-cyan-500/10 text-cyan-300'
+                  : 'text-slate-300 hover:bg-white/5'
                   }`}
               >
                 {link.label}
@@ -804,22 +808,76 @@ const handleFormSubmit = async (e) => {
         </div>
       </section>
 
+      
       {/* CONTACT */}
-      <section
-        id="contact"
-        className="py-24"
-      >
+      <section id="contact" className="py-24">
         <div className="max-w-4xl mx-auto px-5">
 
-          <h2 className="text-4xl font-black text-center mb-16 bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
+          {/* Heading */}
+          <h2 className="text-4xl font-black text-center mb-5 bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
             Let's Connect
           </h2>
 
+          {/* SOCIAL MEDIA */}
+          <div className="flex items-center justify-center gap-5 flex-wrap mb-5">
+
+            {/* Github */}
+            <motion.a
+              whileHover={{ y: -5, scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://github.com/Binod-Sharma7"
+              target="_blank"
+              rel="noreferrer"
+              className="w-14 h-14 rounded-2xl border border-white/10 bg-slate-900 flex items-center justify-center hover:border-cyan-400/40 hover:bg-cyan-500/10 transition-all duration-300"
+            >
+              <Github className="w-6 h-6 text-slate-300 hover:text-cyan-300" />
+            </motion.a>
+
+            {/* Instagram */}
+            <motion.a
+              whileHover={{ y: -5, scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://www.instagram.com/b_nod007"
+              target="_blank"
+              rel="noreferrer"
+              className="w-14 h-14 rounded-2xl border border-white/10 bg-slate-900 flex items-center justify-center hover:border-pink-400/40 hover:bg-pink-500/10 transition-all duration-300"
+            >
+              <Instagram className="w-6 h-6 text-slate-300 hover:text-pink-400" />
+            </motion.a>
+
+            {/* Facebook */}
+            <motion.a
+              whileHover={{ y: -5, scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://www.facebook.com/dangerboy.binod.9"
+              target="_blank"
+              rel="noreferrer"
+              className="w-14 h-14 rounded-2xl border border-white/10 bg-slate-900 flex items-center justify-center hover:border-blue-400/40 hover:bg-blue-500/10 transition-all duration-300"
+            >
+              <Facebook className="w-6 h-6 text-slate-300 hover:text-blue-400" />
+            </motion.a>
+
+            {/* Linkedin */}
+            <motion.a
+              whileHover={{ y: -5, scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://www.linkedin.com/in/binod-sharma-7869463a3"
+              target="_blank"
+              rel="noreferrer"
+              className="w-14 h-14 rounded-2xl border border-white/10 bg-slate-900 flex items-center justify-center hover:border-cyan-400/40 hover:bg-cyan-500/10 transition-all duration-300"
+            >
+              <Linkedin className="w-6 h-6 text-slate-300 hover:text-cyan-300" />
+            </motion.a>
+
+          </div>
+
+          {/* FORM */}
           <form
             onSubmit={handleFormSubmit}
-            className="p-8 rounded-3xl border border-white/10 bg-white/[0.03] space-y-6"
+            className="p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md space-y-6"
           >
 
+            {/* Name */}
             <input
               type="text"
               value={formData.name}
@@ -831,9 +889,10 @@ const handleFormSubmit = async (e) => {
               }
               placeholder="Your Name"
               required
-              className="w-full bg-slate-900 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400"
+              className="w-full bg-slate-900 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-slate-500 focus:border-cyan-400 transition-all"
             />
 
+            {/* Email */}
             <input
               type="email"
               value={formData.email}
@@ -845,9 +904,10 @@ const handleFormSubmit = async (e) => {
               }
               placeholder="Your Email"
               required
-              className="w-full bg-slate-900 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400"
+              className="w-full bg-slate-900 border border-white/10 rounded-2xl px-5 py-4 outline-none text-white placeholder:text-slate-500 focus:border-cyan-400 transition-all"
             />
 
+            {/* Message */}
             <textarea
               rows={5}
               value={formData.message}
@@ -859,36 +919,38 @@ const handleFormSubmit = async (e) => {
               }
               placeholder="Your Message"
               required
-              className="w-full bg-slate-900 border border-white/10 rounded-3xl px-5 py-4 outline-none resize-none focus:border-cyan-400"
+              className="w-full bg-slate-900 border border-white/10 rounded-3xl px-5 py-4 outline-none resize-none text-white placeholder:text-slate-500 focus:border-cyan-400 transition-all"
             />
 
+            {/* Button */}
             <motion.button
-              whileHover={{
-                scale: 1.02,
-              }}
-              whileTap={{
-                scale: 0.98,
-              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               disabled={isSubmitting}
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold"
+              className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
 
-            {submitStatus === 'success' && (
-              <p className="text-green-400 text-center">
+            {/* Success Message */}
+            {submitStatus === "success" && (
+              <p className="text-green-400 text-center font-medium">
                 ✅ Message Sent Successfully
               </p>
             )}
 
-            {submitStatus === 'error' && (
-              <p className="text-red-400 text-center">
+            {/* Error Message */}
+            {submitStatus === "error" && (
+              <p className="text-red-400 text-center font-medium">
                 ❌ Failed To Send Message
               </p>
             )}
+
           </form>
         </div>
       </section>
+     
+
 
       {/* FOOTER */}
       <footer className="py-10 border-t border-white/5 text-center text-slate-500 text-sm">
@@ -898,4 +960,4 @@ const handleFormSubmit = async (e) => {
   );
 };
 
-export default App;
+export default App; 
