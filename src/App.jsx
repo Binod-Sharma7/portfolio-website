@@ -507,7 +507,7 @@ const App = () => {
               >
                 <Cpu className="w-5 h-5 text-violet-300" />
               </motion.div>
-              
+
 
               <img
                 src="/photos/pp/20260315_213247.jpg.jpeg"
@@ -731,6 +731,23 @@ const App = () => {
                 tech: ['React', 'Tailwind'],
               },
               {
+                title: 'Smart Door Lock System',
+                desc: 'Arduino/ESP32 based Smart Door Lock System using 4x4 Keypad, 16x2 I2C LCD, Servo motor, Buzzer and LED. The system allows secure password-based access with masked input display, real-time verification, and alert system for wrong attempts.',
+                img: '/photos/projects/sdl.png',
+                github: 'https://github.com/Binod-Sharma7/smart-door-lock-system',
+                tech: [
+                  'ESP32 / Arduino',
+                  '4x4 Keypad',
+                  '16x2 LCD (I2C PCF8574)',
+                  'Servo Motor',
+                  'Buzzer',
+                  'Embedded C++',
+                  'Embedded Systems',
+                ],
+                webdemo: 'https://go.screenpal.com/watch/cOhYbBntp3L', 
+                
+              },
+              {
                 title: 'Task Manager Dashboard',
                 desc: 'Advanced MERN stack task management dashboard.',
                 img: '/photos/projects/task.jpeg',
@@ -796,8 +813,8 @@ const App = () => {
                       <GitBranch className="w-4 h-4" />
                       Code
                     </motion.a>
-                      
-                      <motion.a
+
+                    <motion.a
                       whileHover={{
                         scale: 1.03,
                       }}
